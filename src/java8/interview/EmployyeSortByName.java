@@ -27,6 +27,14 @@ public class EmployyeSortByName {
             
               List<Employee> salary1 = employeesList.stream().sorted(Comparator.comparing(Employee::getSalary).reversed()).collect(Collectors.toList());
             System.out.println(salary1);
+            
+                  long count = employeesList.parallelStream().filter(sal -> sal.getSalary()>20000).count();
+	              System.out.println(count);
+	              
+	              long count2 = employeesList.parallelStream().count();
+	              System.out.println(count2);
+	
+	
 	}
 
 
